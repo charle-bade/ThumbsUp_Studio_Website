@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - ThumbsUp Studio</title>
+    <link rel="icon" href="https://placehold.co/32x32/FF0000/FFFFFF?text=TS" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques à la page Services */
+        .service-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-detail-card {
+            background-color: var(--color-white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .service-detail-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-detail-card i {
+            font-size: 3.5em;
+            color: var(--color-yellow-accent);
+            margin-bottom: 25px;
+        }
+
+        .service-detail-card h3 {
+            font-family: var(--font-heading);
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: var(--color-black);
+            text-transform: uppercase;
+        }
+
+        .service-detail-card p {
+            color: #666;
+            font-size: 1.05em;
+            margin-bottom: 20px;
+        }
+
+        .service-detail-card .features-list {
+            list-style: none;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .service-detail-card .features-list li {
+            margin-bottom: 10px;
+            color: #444;
+            font-size: 0.95em;
+        }
+
+        .service-detail-card .features-list li i {
+            color: var(--color-red);
+            margin-right: 8px;
+            font-size: 1em;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 80px;
+            padding: 60px 20px;
+            background-color: var(--color-black);
+            color: var(--color-white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-section h2 {
+            font-family: var(--font-heading);
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-section p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .service-detail-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .cta-section h2 {
+                font-size: 2.2em;
+            }
+            .cta-section p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Bouton WhatsApp flottant -->
+    <a href="https://wa.me/2290169284952" class="whatsapp-float" target="_blank" aria-label="Contacter ThumbsUp Studio sur WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- En-tête du site -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">ThumbsUp Studio</a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="pricing.html">Tarifs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="burger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Services Détaillés -->
+    <section class="services-detail-section section-padding">
+        <div class="container">
+            <h1 class="section-title fade-in">Nos Services Complets</h1>
+            <p class="section-description fade-in">Découvrez en détail comment nous pouvons transformer vos vidéos avec des miniatures exceptionnelles.</p>
+
+            <div class="service-detail-grid">
+                <!-- Service: Création de Miniature Unique -->
+                <div class="service-detail-card fade-in slide-up">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Miniature Sur Mesure</h3>
+                    <p>Un design unique et percutant pour une vidéo spécifique, conçu pour maximiser son attrait.</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Design personnalisé et créatif</li>
+                        <li><i class="fas fa-check-circle"></i> Optimisation pour le CTR</li>
+                        <li><i class="fas fa-check-circle"></i> Format YouTube standard (1280x720px)</li>
+                        <li><i class="fas fa-check-circle"></i> Livraison en JPG et PNG haute résolution</li>
+                        <li><i class="fas fa-check-circle"></i> 1 révision incluse</li>
+                        <li><i class="fas fa-check-circle"></i> Délai de 24-48h</li>
+                    </ul>
+                    <a href="pricing.html" class="btn btn-primary mt-4">Voir les tarifs</a>
+                </div>
+
+                <!-- Service: Packs de Miniatures -->
+                <div class="service-detail-card fade-in slide-up delay-1">
+                    <i class="fas fa-cubes"></i>
+                    <h3>Packs Économiques</h3>
+                    <p>Des packs de miniatures pour les créateurs réguliers, offrant cohérence et économies.</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Packs de 5, 10 ou 20 miniatures</li>
+                        <li><i class="fas fa-check-circle"></i> Designs adaptés à votre style de chaîne</li>
+                        <li><i class="fas fa-check-circle"></i> Révisions illimitées pour chaque miniature</li>
+                        <li><i class="fas fa-check-circle"></i> Support client dédié</li>
+                        <li><i class="fas fa-check-circle"></i> Délais de livraison adaptés au volume</li>
+                        <li><i class="fas fa-check-circle"></i> Tarifs dégressifs avantageux</li>
+                    </ul>
+                    <a href="pricing.html" class="btn btn-primary mt-4">Découvrir les packs</a>
+                </div>
+
+                <!-- Service: Consultation & Stratégie -->
+                <div class="service-detail-card fade-in slide-up delay-2">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Conseil Stratégique</h3>
+                    <p>Au-delà du design, nous vous aidons à élaborer une stratégie de miniatures pour votre chaîne.</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Analyse de votre chaîne et de votre niche</li>
+                        <li><i class="fas fa-check-circle"></i> Recommandations pour l'optimisation CTR</li>
+                        <li><i class="fas fa-check-circle"></i> Conseils sur les tendances visuelles YouTube</li>
+                        <li><i class="fas fa-check-circle"></i> Stratégie de branding visuel pour vos miniatures</li>
+                        <li><i class="fas fa-check-circle"></i> Session de consultation personnalisée</li>
+                        <li><i class="fas fa-check-circle"></i> Rapports d'analyse (optionnel)</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary mt-4">Demander une consultation</a>
+                </div>
+            </div>
+
+            <div class="cta-section fade-in slide-up mt-4">
+                <h2>Prêt à Booster Vos Vues ?</h2>
+                <p>N'attendez plus pour donner à vos vidéos les miniatures qu'elles méritent. Contactez-nous dès aujourd'hui pour un devis personnalisé ou pour démarrer votre projet !</p>
+                <a href="contact.html" class="btn btn-secondary">Contactez-nous maintenant <i class="fas fa-paper-plane"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col about-col">
+                    <h3>ThumbsUp Studio</h3>
+                    <p>Votre partenaire pour des miniatures YouTube qui captivent et convertissent. Boostez votre visibilité dès aujourd'hui !</p>
+                </div>
+                <div class="footer-col links-col">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="pricing.html">Tarifs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact-col">
+                    <h3>Contactez-nous</h3>
+                    <p><i class="fas fa-envelope"></i> contact@thumbsupstudio.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +229 01 69 28 49 52</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Basé à Cotonou, Bénin (Service mondial)</p>
+                </div>
+                <div class="footer-col social-col">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="https://youtube.com" target="_blank" aria-label="Chaîne YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Page Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com" target="_blank" aria-label="Compte TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ThumbsUp Studio. Tous droits réservés.</p>
+                <p><a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

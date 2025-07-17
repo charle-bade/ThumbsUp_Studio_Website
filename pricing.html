@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarifs - ThumbsUp Studio</title>
+    <link rel="icon" href="https://placehold.co/32x32/FF0000/FFFFFF?text=TS" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques à la page Tarifs */
+        .pricing-plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .pricing-card {
+            background-color: var(--color-white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid var(--color-red);
+            box-shadow: 0 10px 40px rgba(255, 0, 0, 0.2);
+            transform: scale(1.03);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(255, 0, 0, 0.3);
+        }
+
+        .pricing-card h3 {
+            font-family: var(--font-heading);
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            color: var(--color-black);
+            text-transform: uppercase;
+        }
+
+        .pricing-card .price {
+            font-family: var(--font-heading);
+            font-size: 3.5em;
+            color: var(--color-red);
+            margin-bottom: 10px;
+            display: block;
+            line-height: 1;
+        }
+
+        .pricing-card .price span {
+            font-size: 0.5em; /* Pour le symbole euro */
+            vertical-align: super;
+        }
+
+        .pricing-card .per-miniature {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .pricing-card .features-list {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .pricing-card .features-list li {
+            margin-bottom: 12px;
+            color: #444;
+            font-size: 1em;
+        }
+
+        .pricing-card .features-list li i {
+            color: var(--color-red);
+            margin-right: 10px;
+            font-size: 1.1em;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 80px;
+        }
+
+        .faq-item {
+            background-color: var(--color-white);
+            border: 1px solid #eee;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            padding: 20px 25px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--color-black);
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px; /* Ajoute un padding en bas du paragraphe */
+        }
+
+        .faq-answer.active {
+            max-height: 200px; /* Hauteur max pour l'animation (ajuster si contenu plus long) */
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-plans-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Bouton WhatsApp flottant -->
+    <a href="https://wa.me/2290169284952" class="whatsapp-float" target="_blank" aria-label="Contacter ThumbsUp Studio sur WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- En-tête du site -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">ThumbsUp Studio</a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="pricing.html" class="active">Tarifs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="burger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Tarifs -->
+    <section class="pricing-section section-padding">
+        <div class="container">
+            <h1 class="section-title fade-in">Nos Tarifs & Offres</h1>
+            <p class="section-description fade-in">Choisissez le plan qui propulsera votre chaîne YouTube vers de nouveaux sommets.</p>
+
+            <div class="pricing-plans-grid">
+                <!-- Offre 1 Miniature -->
+                <div class="pricing-card fade-in slide-up">
+                    <h3>1 Miniature Pro</h3>
+                    <span class="price">25<span>€</span></span>
+                    <p class="per-miniature">Par miniature</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> Design 100% personnalisé</li>
+                        <li><i class="fas fa-check-circle"></i> Format YouTube (1280x720px)</li>
+                        <li><i class="fas fa-check-circle"></i> Fichiers .jpg et .png</li>
+                        <li><i class="fas fa-check-circle"></i> 1 révision incluse</li>
+                        <li><i class="fas fa-check-circle"></i> Délai de livraison : 24-48h</li>
+                    </ul>
+                    <a href="contact.html?plan=1-miniature" class="btn btn-primary">Commander</a>
+                </div>
+
+                <!-- Offre Pack 5 Miniatures (mise en avant) -->
+                <div class="pricing-card featured fade-in slide-up delay-1">
+                    <h3>Pack 5 Miniatures</h3>
+                    <span class="price">110<span>€</span></span>
+                    <p class="per-miniature">Soit 22€/miniature</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> 5 Designs personnalisés</li>
+                        <li><i class="fas fa-check-circle"></i> Optimisation pour le CTR</li>
+                        <li><i class="fas fa-check-circle"></i> Fichiers .jpg et .png</li>
+                        <li><i class="fas fa-check-circle"></i> Révisions illimitées</li>
+                        <li><i class="fas fa-check-circle"></i> Délai de livraison : 3-5 jours</li>
+                        <li><i class="fas fa-check-circle"></i> Support prioritaire</li>
+                    </ul>
+                    <a href="contact.html?plan=pack-5" class="btn btn-primary">Commander</a>
+                </div>
+
+                <!-- Offre Pack 10 Miniatures -->
+                <div class="pricing-card fade-in slide-up delay-2">
+                    <h3>Pack 10 Miniatures</h3>
+                    <span class="price">200<span>€</span></span>
+                    <p class="per-miniature">Soit 20€/miniature</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> 10 Designs personnalisés</li>
+                        <li><i class="fas fa-check-circle"></i> Stratégie visuelle complète</li>
+                        <li><i class="fas fa-check-circle"></i> Fichiers .jpg et .png</li>
+                        <li><i class="fas fa-check-circle"></i> Révisions illimitées</li>
+                        <li><i class="fas fa-check-circle"></i> Délai de livraison : 7-10 jours</li>
+                        <li><i class="fas fa-check-circle"></i> Consultation stratégique offerte</li>
+                    </ul>
+                    <a href="contact.html?plan=pack-10" class="btn btn-primary">Commander</a>
+                </div>
+
+                <!-- Offre Pack 20 Miniatures (si pertinent) -->
+                <div class="pricing-card fade-in slide-up delay-3">
+                    <h3>Pack 20 Miniatures</h3>
+                    <span class="price">350<span>€</span></span>
+                    <p class="per-miniature">Soit 17.5€/miniature</p>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check-circle"></i> 20 Designs personnalisés</li>
+                        <li><i class="fas fa-check-circle"></i> Accompagnement dédié</li>
+                        <li><i class="fas fa-check-circle"></i> Fichiers .jpg et .png</li>
+                        <li><i class="fas fa-check-circle"></i> Révisions illimitées</li>
+                        <li><i class="fas fa-check-circle"></i> Délai de livraison flexible</li>
+                        <li><i class="fas fa-check-circle"></i> Priorité maximale</li>
+                    </ul>
+                    <a href="contact.html?plan=pack-20" class="btn btn-primary">Commander</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section FAQ -->
+    <section class="faq-section section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title fade-in">Questions Fréquentes (FAQ)</h2>
+            <p class="section-description fade-in">Trouvez les réponses à vos interrogations les plus courantes.</p>
+
+            <div class="faq-container">
+                <div class="faq-item fade-in slide-up">
+                    <div class="faq-question">
+                        Quel est le format de livraison des miniatures ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Toutes nos miniatures sont livrées au format standard de YouTube (1280x720 pixels) en haute résolution. Nous fournissons les fichiers au format JPG et PNG pour une flexibilité maximale.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in slide-up delay-1">
+                    <div class="faq-question">
+                        Quel est le délai de livraison ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Le délai de livraison varie en fonction du pack choisi :</p>
+                        <ul>
+                            <li>1 Miniature : 24-48 heures</li>
+                            <li>Pack 5 Miniatures : 3-5 jours</li>
+                            <li>Pack 10 Miniatures : 7-10 jours</li>
+                            <li>Pack 20 Miniatures : Délai flexible à définir ensemble</li>
+                        </ul>
+                        <p>Ces délais sont indicatifs et peuvent être ajustés en fonction de la complexité du projet et de notre charge de travail.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in slide-up delay-2">
+                    <div class="faq-question">
+                        Combien de révisions sont incluses ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pour la miniature individuelle, une révision est incluse. Pour les packs (5, 10, 20 miniatures), les révisions sont illimitées afin de garantir votre entière satisfaction.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in slide-up delay-3">
+                    <div class="faq-question">
+                        Comment se passe le processus de commande ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>C'est simple ! Choisissez votre pack, cliquez sur "Commander". Vous serez redirigé vers notre formulaire de contact où vous pourrez nous donner tous les détails de votre projet (titre de la vidéo, idée générale, style souhaité, etc.). Nous vous contacterons ensuite pour confirmer et démarrer la création.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in slide-up delay-4">
+                    <div class="faq-question">
+                        Puis-je demander des miniatures pour différentes niches ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui, absolument ! Que vous fassiez du gaming, du business, des vlogs, de la tech ou de l'éducation, nous adaptons notre style et nos techniques pour correspondre parfaitement à votre niche et à votre audience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col about-col">
+                    <h3>ThumbsUp Studio</h3>
+                    <p>Votre partenaire pour des miniatures YouTube qui captivent et convertissent. Boostez votre visibilité dès aujourd'hui !</p>
+                </div>
+                <div class="footer-col links-col">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="pricing.html">Tarifs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact-col">
+                    <h3>Contactez-nous</h3>
+                    <p><i class="fas fa-envelope"></i> contact@thumbsupstudio.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +229 01 69 28 49 52</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Basé à Cotonou, Bénin (Service mondial)</p>
+                </div>
+                <div class="footer-col social-col">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="https://youtube.com" target="_blank" aria-label="Chaîne YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Page Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com" target="_blank" aria-label="Compte TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ThumbsUp Studio. Tous droits réservés.</p>
+                <p><a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Script spécifique pour l'accordéon FAQ
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling; // L'élément de réponse est juste après la question
+                    const icon = question.querySelector('i');
+
+                    // Fermer toutes les autres réponses ouvertes
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
+                            otherQuestion.classList.remove('active');
+                            otherQuestion.nextElementSibling.classList.remove('active');
+                            otherQuestion.querySelector('i').classList.remove('active');
+                        }
+                    });
+
+                    // Basculer la classe 'active' pour la question et la réponse cliquée
+                    question.classList.toggle('active');
+                    answer.classList.toggle('active');
+                    icon.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - ThumbsUp Studio</title>
+    <link rel="icon" href="https://placehold.co/32x32/FF0000/FFFFFF?text=TS" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques au portfolio */
+        .portfolio-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .portfolio-item {
+            background-color: var(--color-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 200px; /* Hauteur fixe pour uniformité */
+            object-fit: cover; /* Assure que l'image couvre la zone sans déformation */
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05); /* Effet de zoom au survol */
+        }
+
+        .portfolio-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .portfolio-info h3 {
+            font-family: var(--font-heading);
+            font-size: 1.6em;
+            margin-bottom: 10px;
+            color: var(--color-black);
+            text-transform: uppercase;
+        }
+
+        .portfolio-info p {
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        /* Filtres de catégorie */
+        .portfolio-filters {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .portfolio-filters button {
+            background-color: var(--color-light-gray);
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-weight: 600;
+            color: #555;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-filters button:hover,
+        .portfolio-filters button.active {
+            background-color: var(--color-red);
+            color: var(--color-white);
+            border-color: var(--color-red);
+        }
+
+        /* Responsive pour la galerie */
+        @media (max-width: 768px) {
+            .portfolio-gallery-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .portfolio-filters button {
+                display: block;
+                width: 80%;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Bouton WhatsApp flottant -->
+    <a href="https://wa.me/2290169284952" class="whatsapp-float" target="_blank" aria-label="Contacter ThumbsUp Studio sur WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- En-tête du site -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">ThumbsUp Studio</a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="pricing.html">Tarifs</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="burger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Portfolio complète -->
+    <section class="portfolio-full-section section-padding">
+        <div class="container">
+            <h1 class="section-title fade-in">Notre Galerie de Miniatures</h1>
+            <p class="section-description fade-in">Découvrez la diversité de nos créations, optimisées pour chaque niche YouTube.</p>
+
+            <div class="portfolio-filters fade-in">
+                <button class="filter-btn active" data-filter="all">Toutes</button>
+                <button class="filter-btn" data-filter="gaming">Gaming</button>
+                <button class="filter-btn" data-filter="business">Business</button>
+                <button class="filter-btn" data-filter="vlog">Vlog & Lifestyle</button>
+                <button class="filter-btn" data-filter="tech">Tech & Tuto</button>
+                <button class="filter-btn" data-filter="education">Éducation</button>
+            </div>
+
+            <div class="portfolio-gallery-grid" id="portfolio-items">
+                <!-- Exemple de miniatures (à dupliquer et personnaliser) -->
+                <div class="portfolio-item fade-in slide-up" data-category="gaming">
+                    <img src="https://placehold.co/640x360/FF0000/FFFFFF?text=Gaming+Epic" alt="Miniature Gaming Épique">
+                    <div class="portfolio-info">
+                        <h3>Gaming : Victoire Épique</h3>
+                        <p>Miniature dynamique pour un Let's Play de jeu d'action.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in slide-up delay-1" data-category="business">
+                    <img src="https://placehold.co/640x360/FFD700/111111?text=Business+Growth" alt="Miniature Croissance Business">
+                    <div class="portfolio-info">
+                        <h3>Business : Stratégie de Croissance</h3>
+                        <p>Design professionnel pour une vidéo de conseils en entrepreneuriat.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in slide-up delay-2" data-category="vlog">
+                    <img src="https://placehold.co/640x360/111111/FFD700?text=Vlog+Voyage" alt="Miniature Vlog Voyage">
+                    <div class="portfolio-info">
+                        <h3>Vlog : Aventures en Voyage</h3>
+                        <p>Miniature colorée et engageante pour un vlog de voyage.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in slide-up delay-3" data-category="tech">
+                    <img src="https://placehold.co/640x360/FFFFFF/FF0000?text=Tech+Review" alt="Miniature Review Tech">
+                    <div class="portfolio-info">
+                        <h3>Tech : Test Produit</h3>
+                        <p>Miniature claire et informative pour une revue technologique.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in slide-up" data-category="education">
+                    <img src="https://placehold.co/640x360/FF0000/FFFFFF?text=Education+Tips" alt="Miniature Conseils Éducation">
+                    <div class="portfolio-info">
+                        <h3>Éducation : 5 Astuces pour Apprendre</h3>
+                        <p>Design épuré et didactique pour une vidéo éducative.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in slide-up delay-1" data-category="gaming">
+                    <img src="https://placehold.co/640x360/FFD700/111111?text=Gaming+Tutorial" alt="Miniature Gaming Tutoriel">
+                    <div class="portfolio-info">
+                        <h3>Gaming : Tutoriel Pro</h3>
+                        <p>Miniature explicative pour un tutoriel de jeu vidéo.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in slide-up delay-2" data-category="business">
+                    <img src="https://placehold.co/640x360/FF0000/FFFFFF?text=Marketing+Secrets" alt="Miniature Secrets Marketing">
+                    <div class="portfolio-info">
+                        <h3>Business : Secrets Marketing</h3>
+                        <p>Miniature percutante pour une vidéo de stratégie marketing.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item fade-in slide-up delay-3" data-category="vlog">
+                    <img src="https://placehold.co/640x360/111111/FFD700?text=Daily+Vlog" alt="Miniature Vlog Quotidien">
+                    <div class="portfolio-info">
+                        <h3>Vlog : Ma Journée Typique</h3>
+                        <p>Miniature authentique pour un vlog quotidien.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col about-col">
+                    <h3>ThumbsUp Studio</h3>
+                    <p>Votre partenaire pour des miniatures YouTube qui captivent et convertissent. Boostez votre visibilité dès aujourd'hui !</p>
+                </div>
+                <div class="footer-col links-col">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="pricing.html">Tarifs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact-col">
+                    <h3>Contactez-nous</h3>
+                    <p><i class="fas fa-envelope"></i> contact@thumbsupstudio.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +229 01 69 28 49 52</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Basé à Cotonou, Bénin (Service mondial)</p>
+                </div>
+                <div class="footer-col social-col">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="https://youtube.com" target="_blank" aria-label="Chaîne YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Page Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com" target="_blank" aria-label="Compte TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ThumbsUp Studio. Tous droits réservés.</p>
+                <p><a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Script spécifique au portfolio pour le filtrage
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Supprime la classe active de tous les boutons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Ajoute la classe active au bouton cliqué
+                    button.classList.add('active');
+
+                    const filter = button.dataset.filter; // Récupère le filtre (ex: 'gaming', 'all')
+
+                    portfolioItems.forEach(item => {
+                        const category = item.dataset.category;
+                        if (filter === 'all' || category === filter) {
+                            item.style.display = 'block'; // Affiche l'élément
+                            // Optionnel: réinitialiser les animations pour les faire réapparaître
+                            item.classList.remove('active');
+                            setTimeout(() => {
+                                item.classList.add('active');
+                            }, 50); // Petit délai pour que l'animation se réinitialise
+                        } else {
+                            item.style.display = 'none'; // Cache l'élément
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

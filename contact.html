@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - ThumbsUp Studio</title>
+    <link rel="icon" href="https://placehold.co/32x32/FF0000/FFFFFF?text=TS" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles spécifiques à la page Contact */
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .contact-info-item {
+            background-color: var(--color-white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-info-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-info-item i {
+            font-size: 3em;
+            color: var(--color-red);
+            margin-bottom: 20px;
+        }
+
+        .contact-info-item h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: var(--color-black);
+            text-transform: uppercase;
+        }
+
+        .contact-info-item p {
+            color: #666;
+            font-size: 1.05em;
+        }
+
+        .contact-info-item a {
+            color: var(--color-red);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info-item a:hover {
+            color: #cc0000;
+        }
+
+        .contact-social-links {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .contact-social-links h3 {
+            font-family: var(--font-heading);
+            font-size: 2em;
+            color: var(--color-black);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .contact-social-links .social-icons a {
+            font-size: 2.8em;
+            margin: 0 15px;
+            color: var(--color-black);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-social-links .social-icons a:hover {
+            color: var(--color-red);
+            transform: translateY(-5px);
+        }
+
+        /* Réutilisation du style du formulaire de la page d'accueil */
+        .contact-form-section {
+            background-color: var(--color-light-gray);
+        }
+
+        @media (max-width: 768px) {
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Bouton WhatsApp flottant -->
+    <a href="https://wa.me/2290169284952" class="whatsapp-float" target="_blank" aria-label="Contacter ThumbsUp Studio sur WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- En-tête du site -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">ThumbsUp Studio</a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="pricing.html">Tarifs</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="burger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Contact -->
+    <section class="contact-section section-padding">
+        <div class="container">
+            <h1 class="section-title fade-in">Contactez-nous</h1>
+            <p class="section-description fade-in">Nous sommes là pour répondre à toutes vos questions et démarrer votre projet de miniatures.</p>
+
+            <div class="contact-info-grid">
+                <div class="contact-info-item fade-in slide-up">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>Envoyez-nous un message à tout moment.</p>
+                    <p><a href="mailto:contact@thumbsupstudio.com">contact@thumbsupstudio.com</a></p>
+                </div>
+                <div class="contact-info-item fade-in slide-up delay-1">
+                    <i class="fab fa-whatsapp"></i>
+                    <h3>WhatsApp</h3>
+                    <p>Discutez directement avec nous pour une réponse rapide.</p>
+                    <p><a href="https://wa.me/2290169284952" target="_blank">+229 01 69 28 49 52</a></p>
+                </div>
+                <div class="contact-info-item fade-in slide-up delay-2">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Localisation</h3>
+                    <p>Basé à Cotonou, Bénin. Services disponibles mondialement.</p>
+                    <p>Service en ligne</p>
+                </div>
+            </div>
+
+            <div class="contact-social-links fade-in">
+                <h3>Suivez-nous sur les réseaux sociaux</h3>
+                <div class="social-icons">
+                    <a href="https://youtube.com" target="_blank" aria-label="Chaîne YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Page Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://tiktok.com" target="_blank" aria-label="Compte TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Formulaire de Contact (réutilise le style de la page d'accueil) -->
+    <section class="contact-form-section section-padding bg-dark">
+        <div class="container">
+            <h2 class="section-title text-white fade-in">Envoyez-nous un Message</h2>
+            <p class="section-description text-white fade-in">Utilisez le formulaire ci-dessous pour toute question ou demande spécifique.</p>
+            <form class="contact-form fade-in" id="contactForm">
+                <div class="form-group">
+                    <label for="contact-name">Nom complet</label>
+                    <input type="text" id="contact-name" name="name" placeholder="Votre nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email</label>
+                    <input type="email" id="contact-email" name="email" placeholder="Votre email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-subject">Sujet</label>
+                    <input type="text" id="contact-subject" name="subject" placeholder="Sujet de votre message" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Votre message</label>
+                    <textarea id="contact-message" name="message" rows="7" placeholder="Décrivez votre demande..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer le message <i class="fas fa-paper-plane"></i></button>
+                <div id="contact-form-message" class="form-message"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col about-col">
+                    <h3>ThumbsUp Studio</h3>
+                    <p>Votre partenaire pour des miniatures YouTube qui captivent et convertissent. Boostez votre visibilité dès aujourd'hui !</p>
+                </div>
+                <div class="footer-col links-col">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="pricing.html">Tarifs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col contact-col">
+                    <h3>Contactez-nous</h3>
+                    <p><i class="fas fa-envelope"></i> contact@thumbsupstudio.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +229 01 69 28 49 52</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Basé à Cotonou, Bénin (Service mondial)</p>
+                </div>
+                <div class="footer-col social-col">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="https://youtube.com" target="_blank" aria-label="Chaîne YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Page Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com" target="_blank" aria-label="Compte TikTok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ThumbsUp Studio. Tous droits réservés.</p>
+                <p><a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Script spécifique au formulaire de contact
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contactForm');
+            const contactFormMessage = document.getElementById('contact-form-message');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    const name = document.getElementById('contact-name').value;
+                    const email = document.getElementById('contact-email').value;
+                    const subject = document.getElementById('contact-subject').value;
+                    const message = document.getElementById('contact-message').value;
+
+                    if (!name || !email || !subject || !message) {
+                        contactFormMessage.textContent = 'Veuillez remplir tous les champs obligatoires.';
+                        contactFormMessage.classList.remove('success');
+                        contactFormMessage.classList.add('error');
+                        contactFormMessage.style.display = 'block';
+                        return;
+                    }
+
+                    console.log('Données du formulaire de contact:', { name, email, subject, message });
+
+                    contactFormMessage.textContent = 'Votre message a été envoyé avec succès ! Nous vous répondrons bientôt.';
+                    contactFormMessage.classList.remove('error');
+                    contactFormMessage.classList.add('success');
+                    contactFormMessage.style.display = 'block';
+
+                    setTimeout(() => {
+                        contactForm.reset();
+                        contactFormMessage.style.display = 'none';
+                    }, 3000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
